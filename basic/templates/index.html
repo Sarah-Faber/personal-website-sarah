@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+  {% block content %}
+  <div id="hero">
+    <div id="hero-left">
+      <h1 id="top-titles" class="onetext">sarah faber</h1>
+      <nav class="navbar">
+
+        <!-- Links for Hero Section -->
+        <!-- once you have routes for links, change to url-for function to change linking automatically/quickly -->
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#about-me-anchor">about me</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{url_for('resume')}}">resume</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact-me-anchor">contact me</a> <!-- stays on same page but goes straight to contact section-->
+          </li>
+        </ul>
+
+      </nav>
+    </div>
+
+
+    <div id="hero-right">
+      <h2 class="onetext">a summary of my personal goals, accomplishements and inspirations.</h2>
+     <!-- <img class="img-fluid" src="/static/images/personal-website-try-01.png" alt="two people doing yoga"> -->
+    </div>
+  </div>
+
+  <div id="about-me-anchor">
+    <h1 id="sub-titles" class="onetext">about me</h1>
+  </div>
+
+  <div id="about-me">
+    <nav class="navbar">
+
+      <!-- Links for About-me Section-->
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="{{url_for('experience')}}">experience</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/passions">passions</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{url_for('inspiration')}}">inspiration</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{url_for('kindwords')}}">kind words</a>
+        </li>
+      </ul>
+
+    </nav>
+  </div>
+
+  <div id="contact-me-anchor">
+    <h1 id="contact-me-title" class="onetext"> contact me</h1>
+    <h2 id="contact-me-subtitle" class="onetext">let's exchange inspiration.</h2>
+  </div>
+
+  <!-- Oiginal Code from https://www.w3schools.com/howto/howto_css_contact_form.asp - modified to my preferences -->
+  <div class="container">
+    <form action="url_for('thankyou')}}" method="POST">
+
+      <label for="fname">What is your name?</label>
+      <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+      <label for="subject">Subject</label>
+      <input type="text" name="subject" placeholder="What would you like to share?"></input>
+
+      <label for="subject">Message ( please leave your contact information )</label>
+      <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+      <input type="submit" value="Submit">
+
+    </form>
+  </div>
+
+   
+
+  {% endblock %} 
