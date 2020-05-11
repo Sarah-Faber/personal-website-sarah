@@ -3,8 +3,8 @@ import secrets
 from PIL import Image
 from flask import render_template, url_for, flash, redirect, request, abort
 from basic import app, db, bcrypt
-from basic.forms import RegistrationForm, LoginForm, UpdateAccountForm, PostForm
-from basic.models import User, Post
+from basic.forms import RegistrationForm, LoginForm, UpdateAccountForm, PostForm, WordsForm
+from basic.models import User, Post, Words
 from flask_login import login_user, current_user, logout_user, login_required
 
 
@@ -33,18 +33,34 @@ def passions():
 
 @app.route('/kindwords')
 def kindwords():
-    return render_template('kindwords.html', title='kindwords')
+    words = Words.query.all()   
+    return render_template('kindwords.html', title='Kind Words', words=words)
+
+
+@app.route("/sharewords", methods=['GET', 'POST'])
+def sharewords():
+    form = WordsForm()
+    if form.validate_on_submit():
+        if form.picture.data:
+            picture_file = save_picture(form.picture.data)
+            words.image_file = picture_file
+        words = Words(name=form.name.data, content=form.content.data)
+        db.session.add(words)
+        db.session.commit()
+        flash('Your words have been shared!', 'success')
+        return redirect(url_for('index'))
+    return render_template('sharewords.html', title='Share my experience',
+                           form=form, legend='Words')
 
 @app.route('/resume')
 def resume():
     return render_template('resume.html', title='resume')
 
-@app.route('/thankyou')
+@app.route('/thankyou', methods= ['GET', 'POST'])
 def thankyou():
     firstname = request.args.get('firstname')
     subject = request.args.get('subject')
-
-    return render_template('thankyou.html', firstname=firstname, subject=subject,title='Thank you!')
+    return render_template('thankyou.html', firstname=firstname, subject=subject, title='Thank you!')
 
 @app.errorhandler(404)
 def page_not_found(e):
@@ -176,3 +192,4 @@ def delete_post(post_id):
     db.session.commit()
     flash('Your post has been deleted!', 'success')
     return redirect(url_for('index'))
+    

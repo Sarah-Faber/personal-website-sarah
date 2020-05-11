@@ -61,9 +61,11 @@
     <h2 id="contact-me-subtitle" class="onetext">let's exchange inspiration.</h2>
   </div>
 
+  <br>
+
   <!-- Oiginal Code from https://www.w3schools.com/howto/howto_css_contact_form.asp - modified to my preferences -->
   <div class="container">
-    <form action="url_for('thankyou')}}" method="POST">
+    <form action="{{url_for('thankyou')}}" method="POST">
 
       <label for="fname">What is your name?</label>
       <input type="text" id="fname" name="firstname" placeholder="Your name..">

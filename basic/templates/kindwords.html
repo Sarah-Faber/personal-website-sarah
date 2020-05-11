@@ -13,6 +13,22 @@
 
   <div>
     <h1 id="sub-titles" class="onetext"> Thank you for sharing! </h1>
+    <br>
+    <a href="{{ url_for('sharewords') }}">I would like to share my experience!</a>
+    <br>
+    <br>
   </div>
+
+  {% for words in words %}
+  <article class="media content-section">
+    <img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/' + words.image_file) }}">
+    <div class="media-body">
+      <div class="article-metadata">
+        <small class="text-muted">{{ words.name}}</small>
+        <small class="text-muted">{{ words.date_posted.strftime('%Y-%m-%d') }}</small>
+      <p class="article-content">{{ words.content }}</p>
+    </div>
+  </article>
+{% endfor %}
 
 {% endblock content %} 

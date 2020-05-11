@@ -60,3 +60,9 @@ class PostForm(FlaskForm):
     content = TextAreaField('Content', validators=[DataRequired()])
     category = SelectField ('Category', validators=[DataRequired()], choices =[('Projects', 'Projects'), ('Product Management', 'Product Management'), ('Goals', 'Goals'), ('Passions', 'Passions'), ('Books' , 'Books'), ('Art', 'Art'), ('Music', 'Music')])
     submit = SubmitField('Post')
+
+class WordsForm(FlaskForm):
+    name = StringField('Name', validators=[DataRequired()])
+    content = TextAreaField('Content', validators=[DataRequired()])
+    picture = FileField('Feel free to upload a Profile Picture', validators=[FileAllowed(['jpg', 'png'])])
+    submit = SubmitField('Post')
