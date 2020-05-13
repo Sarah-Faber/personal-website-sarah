@@ -3,6 +3,21 @@ h1 {
   color: #303a41;
 }
 
+.link {
+  color: #303a41;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: white;
+  text-decoration: none;
+}
+.link:hover {
+  color: #ffffff;
+  background-color: #8a8280;
+  text-decoration: none;
+}
+
 #top-titles {
   position: relative;
   left: 15px;
@@ -18,9 +33,25 @@ h1 {
   overflow: hidden;
 }
 
+#paragraph {
+ padding: 15px;
+ width: 50%;
+}
+
+.nicetypo {
+  font-family: "Poppins";
+  font-size: larger;
+  color: #303a41;
+}
 
 .nav-link {
   color: #303a41;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+  background-color: #8a8280;
+
 }
 
 
@@ -103,22 +134,12 @@ input[type="submit"]:hover {
   background-color: #5f788a;
 }
 
-.site-header .navbar-nav .nav-link {
-  color: #cbd5db;
-}
-
-.site-header .navbar-nav .nav-link:hover {
-  color: #ffffff;
-}
-
-.site-header .navbar-nav .nav-link.active {
-  font-weight: 500;
-}
-
 .content-section {
+  font-family: "Poppins", sans-serif;
+  font-size: large;
   background: #ffffff;
   padding: 10px 20px;
-  border: 1px solid #dddddd;
+  border: 1px solid #ffffff;
   border-radius: 3px;
   margin-bottom: 20px;
 }
@@ -148,10 +169,6 @@ a.article-title:hover {
   border-bottom: 1px solid #e3e3e3
 }
 
-.article-metadata a:hover {
-  color: #333;
-  text-decoration: none;
-}
 
 .article-svg {
   width: 25px;
@@ -169,3 +186,15 @@ a.article-title:hover {
 .account-heading {
   font-size: 2.5rem;
 }
+
+#formbg {
+  background-color: #f5f2f0 ;
+}
+
+footer { 
+  display: block;
+  color: #303a41;
+  background-color: #f5f2f0;
+  padding: 20px;
+}
+

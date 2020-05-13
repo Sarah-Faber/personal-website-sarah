@@ -8,15 +8,15 @@
     </div>
     <div id="hero-right">
       <h2 class="onetext"> some reviews of people I have worked with</h2>
+      <br>
+      <a class="link" href="{{ url_for('sharewords') }}">I would like to share my experience!</a>
+    
     </div>
   </div>
 
   <div>
     <h1 id="sub-titles" class="onetext"> Thank you for sharing! </h1>
-    <br>
-    <a href="{{ url_for('sharewords') }}">I would like to share my experience!</a>
-    <br>
-    <br>
+  
   </div>
 
   {% for words in words %}

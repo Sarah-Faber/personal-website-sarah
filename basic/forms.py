@@ -66,3 +66,9 @@ class WordsForm(FlaskForm):
     content = TextAreaField('Content', validators=[DataRequired()])
     picture = FileField('Feel free to upload a Profile Picture', validators=[FileAllowed(['jpg', 'png'])])
     submit = SubmitField('Post')
+
+class ContactForm(FlaskForm):
+    name = StringField('What is your name?', validators=[DataRequired()])
+    subject = StringField('Subject', validators=[DataRequired()])
+    message = TextAreaField('Message ( Please share your contact information )', validators=[DataRequired()])
+    submit = SubmitField('Send')

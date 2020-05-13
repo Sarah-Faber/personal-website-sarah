@@ -4,6 +4,8 @@
   <div id="hero">
     <div id="hero-left">
       <h1 id="top-titles" class="onetext">sarah faber</h1>
+      <h2 id="top-titles" class="nicetypo"> hi there, grab a cup of tea and have fun reading</h2>
+      <br>
       <nav class="navbar">
 
         <!-- Links for Hero Section -->
@@ -25,8 +27,7 @@
 
 
     <div id="hero-right">
-      <h2 class="onetext">a summary of my personal goals, accomplishements and inspirations.</h2>
-     <!-- <img class="img-fluid" src="/static/images/personal-website-try-01.png" alt="two people doing yoga"> -->
+      <p class="onetext"></p>
     </div>
   </div>
 
@@ -56,30 +57,96 @@
     </nav>
   </div>
 
+  <div>
+  <div id="hero">
+    <div id="hero-left">
+      <h2 id="top-titles" class="onetext">latest project</h2> <h2 id="top-titles" class="nicetypo">art / cards for hope</h2>
+      <br>
+      <br>
+      <br>
+      <div id="paragraph">
+      <p> Together with the help of my customers, 
+        we have raised 1000 euros and donated them to the WHO.</p> 
+        <br>
+        <a class="link" href="{{url_for('passions')}}"> read more to find out how.</a> 
+      </div>
+    </div>
+    <div id="hero">
+    <img class="img-fluid" src="/static/images/illustrations-pws.png" alt="postcards with illustrations">
+    </div>
+    
+  </div>
+
+  <br>
+
   <div id="contact-me-anchor">
-    <h1 id="contact-me-title" class="onetext"> contact me</h1>
+    <h1 id="contact-me-title" class="onetext"> feel free to contact me</h1>
     <h2 id="contact-me-subtitle" class="onetext">let's exchange inspiration.</h2>
   </div>
 
   <br>
 
+
+
   <!-- Oiginal Code from https://www.w3schools.com/howto/howto_css_contact_form.asp - modified to my preferences -->
+  
   <div class="container">
-    <form action="{{url_for('thankyou')}}" method="POST">
-
-      <label for="fname">What is your name?</label>
-      <input type="text" id="fname" name="firstname" placeholder="Your name..">
-
-      <label for="subject">Subject</label>
+    <form action="{{url_for('index')}}" method="POST">
+      {{ form.hidden_tag() }}
+        <fieldset class="form-group">
+            <div class="form-group" >
+                {{ form.name.label(class="form-control-label") }}
+                {% if form.name.errors %}
+                    {{ form.name(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.name.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.name(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.subject.label(class="form-control-label") }}
+                {% if form.subject.errors %}
+                    {{ form.subject(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.subject.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.subject(class="form-control form-control-lg") }}
+                {% endif %}
+            <div class="form-group">
+                {{ form.message.label(class="form-control-label") }}
+                {% if form.message.errors %}
+                    {{ form.message(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.message.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.message(class="form-control form-control-lg") }}
+                {% endif %}
+                
+        </fieldset>
+        <div class="form-group">
+            {{ form.submit(class="btn btn-outline-info") }}
+        </div>
+    </form>
+      <!-- <label for="subject">Subject</label>
       <input type="text" name="subject" placeholder="What would you like to share?"></input>
-
+      
       <label for="subject">Message ( please leave your contact information )</label>
       <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
 
       <input type="submit" value="Submit">
 
     </form>
-  </div>
+  </div> -->
 
    
 

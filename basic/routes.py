@@ -3,14 +3,23 @@ import secrets
 from PIL import Image
 from flask import render_template, url_for, flash, redirect, request, abort
 from basic import app, db, bcrypt
-from basic.forms import RegistrationForm, LoginForm, UpdateAccountForm, PostForm, WordsForm
-from basic.models import User, Post, Words
+from basic.forms import RegistrationForm, LoginForm, UpdateAccountForm, PostForm, WordsForm, ContactForm
+from basic.models import User, Post, Words, Contact
 from flask_login import login_user, current_user, logout_user, login_required
 
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def index():
-    return render_template('index.html')
+    form = ContactForm()
+    if form.validate_on_submit():
+        contacts = Contact(name=form.name.data, subject=form.subject.data, message=form.message.data)
+        db.session.add(contacts)
+        db.session.commit()
+        flash('You have successfully contacted me!', 'success')
+        return redirect(url_for('index'))
+    return render_template('index.html',
+                           form=form )
+    
 
 @app.route('/experience')
 def experience():
@@ -52,15 +61,11 @@ def sharewords():
     return render_template('sharewords.html', title='Share my experience',
                            form=form, legend='Words')
 
+
 @app.route('/resume')
 def resume():
     return render_template('resume.html', title='resume')
 
-@app.route('/thankyou', methods= ['GET', 'POST'])
-def thankyou():
-    firstname = request.args.get('firstname')
-    subject = request.args.get('subject')
-    return render_template('thankyou.html', firstname=firstname, subject=subject, title='Thank you!')
 
 @app.errorhandler(404)
 def page_not_found(e):
