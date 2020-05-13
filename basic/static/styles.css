@@ -120,6 +120,10 @@ input[type="submit"]:hover {
   background-color: #8a8280;
 }
 
+input[type="submit"]:active {
+  background-color: #444444;
+}
+
 /* Add a background color and some padding around the form */
 .container {
   font-family: "Poppins", sans-serif;

@@ -23,26 +23,26 @@ def index():
 
 @app.route('/experience')
 def experience():
-    post_pm = Post.query.filter_by(category = 'Product Management').all()
-    post_projects = Post.query.filter_by(category = 'Projects').all()
+    post_pm = Post.query.order_by(Post.date_posted.desc()).filter_by(category = 'Product Management').all()
+    post_projects = Post.query.order_by(Post.date_posted.desc()).filter_by(category = 'Projects').all()
     return render_template('experience.html', post_pm=post_pm, title='experience', post_projects=post_projects)
 
 
 @app.route('/inspiration')
 def inspiration():
-    post_goals = Post.query.filter_by(category = 'Goals').all()
-    post_books = Post.query.filter_by(category = 'Books').all()
+    post_goals = Post.query.order_by(Post.date_posted.desc()).filter_by(category = 'Goals').all()
+    post_books = Post.query.order_by(Post.date_posted.desc()).filter_by(category = 'Books').all()
     return render_template('inspiration.html', post_goals=post_goals,  title='experience', post_books=post_books)
 
 @app.route('/passions')
 def passions():
-    post_art = Post.query.filter_by(category = 'Art').all()
-    post_music = Post.query.filter_by(category = 'Music').all()
+    post_art = Post.query.order_by(Post.date_posted.desc()).filter_by(category = 'Art').all()
+    post_music = Post.query.order_by(Post.date_posted.desc()).filter_by(category = 'Music').all()
     return render_template('Passions-page.html', title='Passions', post_art=post_art, post_music=post_music)
 
 @app.route('/kindwords')
 def kindwords():
-    words = Words.query.all()   
+    words = Words.query.order_by(Words.date_posted.desc()).all()   
     return render_template('kindwords.html', title='Kind Words', words=words)
 
 
@@ -96,7 +96,7 @@ def login():
         if user and bcrypt.check_password_hash(user.password, form.password.data):
             login_user(user, remember=form.remember.data)
             next_page = request.args.get('next')#didn't fully understand this
-            return redirect(next_page) if next_page else redirect(url_for('thankyou'))
+            return redirect(next_page) if next_page else redirect(url_for('index'))
 
       #hard-coded replaced by login manager:
       # if form.email.data == 'admin@blog.com' and form.password.data == 'password':
