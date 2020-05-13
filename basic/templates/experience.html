@@ -49,6 +49,10 @@
 </div>
 </div>
 
+<div class="post-container">
+  <img class="img-fluid" src="/static/images/teampicture.jpeg" alt="Sharinghoodteam">
+</div>
+
 {% for post in post_projects %}
 <article class="media content-section">
   <img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/' + post.author.image_file) }}">

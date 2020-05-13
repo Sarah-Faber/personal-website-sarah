@@ -18,6 +18,21 @@ h1 {
   text-decoration: none;
 }
 
+.link-whitebg {
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #8a8280;
+  text-decoration: none;
+}
+.link-whitebg:hover {
+  color: #8a8280;
+  background-color: white;
+  text-decoration: none;
+}
+
 #top-titles {
   position: relative;
   left: 15px;
@@ -132,6 +147,12 @@ input[type="submit"]:active {
   padding: 20px;
   position: relative;
   left: -80px;
+}
+
+.post-container {
+  font-family: 'Poppins';
+  border-radius: 20px;
+  padding: 35px;
 }
 
 .bg-steel {
