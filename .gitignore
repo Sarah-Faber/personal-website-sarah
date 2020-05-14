@@ -8,6 +8,7 @@ Icon
 
 # Thumbnails
 ._*
+*.pyc 
 
 # Files that might appear in the root of a volume
 .DocumentRevisions-V100
@@ -24,4 +25,4 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
-*.pyc 
+__pycache__
