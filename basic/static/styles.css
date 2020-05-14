@@ -1,0 +1,225 @@
+h1 {
+  font-family: "Poppins", sans-serif;
+  color: #303a41;
+}
+
+.link {
+  color: #303a41;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: white;
+  text-decoration: none;
+}
+.link:hover {
+  color: #ffffff;
+  background-color: #8a8280;
+  text-decoration: none;
+}
+
+.link-whitebg {
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #8a8280;
+  text-decoration: none;
+}
+.link-whitebg:hover {
+  color: #8a8280;
+  background-color: white;
+  text-decoration: none;
+}
+
+#top-titles {
+  position: relative;
+  left: 15px;
+}
+.onetext {
+  font-family: "Poppins", sans-serif;
+  color: #303a41;
+}
+
+#hero {
+  background-color: #f5f2f0;
+  padding: 30px;
+  overflow: hidden;
+}
+
+#paragraph {
+ padding: 15px;
+ width: 50%;
+}
+
+.nicetypo {
+  font-family: "Poppins";
+  font-size: larger;
+  color: #303a41;
+}
+
+.nav-link {
+  color: #303a41;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+  background-color: #8a8280;
+
+}
+
+
+#hero-left {
+  float: left;
+  width: 50%;
+}
+
+#hero-right {
+  float: left;
+  width: 50%;
+  padding: 60px;
+  color: #303a41;
+}
+
+#sub-titles {
+  text-align: right;
+  padding: 30px;
+  color: #303a41;
+}
+#about-me {
+  color: blue;
+  padding: 30px;
+  overflow: hidden;
+}
+
+#contact-me-title {
+  padding: 30px;
+  color: #303a41;
+}
+
+#contact-me-subtitle {
+  color: #303a41;
+  position: relative;
+  left: 30px;
+  font-size: 15pt;
+}
+
+input[type="text"],
+select,
+textarea {
+  font-family: "Poppins", sans-serif;
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */
+  border: 1px solid #f5f2f0; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type="submit"] {
+  font-family: "Poppins", sans-serif;
+  background-color: #303a41;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type="submit"]:hover {
+  background-color: #8a8280;
+}
+
+input[type="submit"]:active {
+  background-color: #444444;
+}
+
+/* Add a background color and some padding around the form */
+.container {
+  font-family: "Poppins", sans-serif;
+  border-radius: 5px;
+  background-color: #f5f2f0;
+  padding: 20px;
+  position: relative;
+  left: -80px;
+}
+
+.post-container {
+  font-family: 'Poppins';
+  border-radius: 20px;
+  padding: 35px;
+}
+
+.bg-steel {
+  background-color: #5f788a;
+}
+
+.content-section {
+  font-family: "Poppins", sans-serif;
+  font-size: large;
+  background: #ffffff;
+  padding: 10px 20px;
+  border: 1px solid #ffffff;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+.article-title {
+  color: #444444;
+}
+
+a.article-title:hover {
+  color: #8a8280;
+  text-decoration: none;
+}
+
+.article-content {
+  white-space: pre-line;
+}
+
+.article-img {
+  height: 65px;
+  width: 65px;
+  margin-right: 16px;
+}
+
+.article-metadata {
+  padding-bottom: 1px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #e3e3e3
+}
+
+
+.article-svg {
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+}
+
+.account-img {
+  height: 125px;
+  width: 125px;
+  margin-right: 20px;
+  margin-bottom: 16px;
+}
+
+.account-heading {
+  font-size: 2.5rem;
+}
+
+#formbg {
+  background-color: #f5f2f0 ;
+}
+
+footer { 
+  display: block;
+  color: #303a41;
+  background-color: #f5f2f0;
+  padding: 20px;
+}
+

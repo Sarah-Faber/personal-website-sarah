@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+  {% block content %}
+  
+  <div id="hero">
+    <div id="hero-left">
+      <h1 id="top-titles" class="onetext">kind words</h1>
+      <nav class="navbar"> </nav>
+    </div>
+    <div id="hero-right">
+      <h2 class="onetext"> some reviews of people I have worked with</h2>
+      <br>
+      <a class="link" href="{{ url_for('sharewords') }}">I would like to share my experience!</a>
+    
+    </div>
+  </div>
+
+  <div>
+    <h1 id="sub-titles" class="onetext"> Thank you for sharing! </h1>
+  
+  </div>
+
+  {% for words in words %}
+  <article class="media content-section">
+    <img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/' + words.image_file) }}">
+    <div class="media-body">
+      <div class="article-metadata">
+        <small class="text-muted">{{ words.name}}</small>
+        <small class="text-muted">{{ words.date_posted.strftime('%Y-%m-%d') }}</small>
+      <p class="article-content">{{ words.content }}</p>
+    </div>
+  </article>
+{% endfor %}
+
+{% endblock content %} 

@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+  {% block content %}
+  
+  <div id="hero">
+    <div id="hero-left">
+      <h1 id="top-titles" class="onetext">experience</h1>
+      <nav class="navbar">
+
+        <!-- Links for Hero Section -->
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#pm-anchor">product Management</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#projects-anchor">projects</a>
+          </li>
+        </ul>
+
+      </nav>
+    </div>
+    <div id="hero-right">
+      <p class="onetext">open a window and get inspired. </p>
+    </div>
+  </div>
+
+  <div id="pm-anchor">
+  <div>
+    <h1 id="sub-titles" class="onetext"> product management </h1>
+  </div>
+ </div>
+
+  {% for post in post_pm %}
+  <article class="media content-section">
+    <img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/' + post.author.image_file) }}">
+    <div class="media-body">
+      <div class="article-metadata">
+        <small class="text-muted">{{ post.author.username }}</small>
+        <small class="text-muted">{{ post.date_posted.strftime('%Y-%m-%d') }}</small>
+      </div>
+      <h2><a class="article-title" href="{{ url_for('post', post_id=post.id) }}">{{ post.title }}</a></h2>
+      <p class="article-content">{{ post.content }}</p>
+    </div>
+  </article>
+{% endfor %}
+
+<div id="projects-anchor">
+<div>
+  <h1 id="sub-titles" class="onetext"> projects </h1>
+</div>
+</div>
+
+<div class="post-container">
+  <img class="img-fluid" src="/static/images/teampicture.jpeg" alt="Sharinghoodteam">
+</div>
+
+{% for post in post_projects %}
+<article class="media content-section">
+  <img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/' + post.author.image_file) }}">
+  <div class="media-body">
+    <div class="article-metadata">
+      <small class="text-muted">{{ post.author.username }}</small>
+      <small class="text-muted">{{ post.date_posted.strftime('%Y-%m-%d') }}</small>
+    </div>
+    <h2><a class="article-title" href="{{ url_for('post', post_id=post.id) }}">{{ post.title }}</a></h2>
+    <p class="article-content">{{ post.content }}</p>
+  </div>
+</article>
+{% endfor %}
+  
+  <div>
+    <h1 id="contact-me-title"> <a class ="link" href="{{ url_for('index')}}"> let's get in contact.</a></h1>
+  </div>
+
+{% endblock content %} 
